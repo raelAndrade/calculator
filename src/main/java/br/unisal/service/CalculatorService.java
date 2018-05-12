@@ -20,23 +20,8 @@ import br.unisal.interfaces.Calculable;
 )
 public class CalculatorService implements Calculable {
 	
-	private final static String SERVICE = "CalculatorService"; 
-	
-	@Override
-	public double add(double portion1, double portion2) {
-		return portion1 + portion2;
-	}
+	private final static String SERVICE = "CalculatorService";
 
-	@Override
-	public double subtract(double portion1, double portion2) {
-		return portion1 - portion2;
-	}
-
-	@Override
-	public double multiply(double factor1, double factor2) {
-		return factor1 * factor2;
-	}
-	
 	@Override
 	public double divide(double dividend, double divisor) throws SOAPException {
 		if (divisor == 0) {
@@ -61,4 +46,20 @@ public class CalculatorService implements Calculable {
 
 		return dividend / divisor;
 	}
+	
+	@Override
+	public double sum(double portion1, double portion2) {
+		return portion1 + portion2;
+	}
+
+	@Override
+	public double subtract(double subtract1, double subtract2) {
+		return subtract1 - subtract2;
+	}
+
+	@Override
+	public double mult(double mult1, double mult2) {
+		return mult1 * mult2;
+	}
+	
 }

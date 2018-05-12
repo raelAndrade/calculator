@@ -35,43 +35,22 @@ public interface Calculable {
 		@WebParam(name = "divisor") double divisor
 	) throws DivisionByZeroArithymeticException, SOAPException;
 	
+	@WebMethod(action=HOST + "/soma", operationName="sum")
+	public double sum(
+			@WebParam(name = "portion1") double portion1,
+			@WebParam(name = "portion2") double portion2
+		);
 	
-	/**
-	 * Add method
-	 * 
-	 * @param portion1
-	 * @param portion2
-	 * @return
-	 */
-	@WebMethod(action=HOST + "/add", operationName="add")
-	public double add(
-		@WebParam(name = "portion1") double portion1,
-		@WebParam(name = "portion2") double portion2
-	);
-	
-	/**
-	 * Subtract method
-	 * 
-	 * @param portion1
-	 * @param portion2
-	 * @return
-	 */
-	@WebMethod(action=HOST + "/subtract", operationName="subtract")
+	@WebMethod(action=HOST + "/subtrai", operationName="subtract")
 	public double subtract(
-		@WebParam(name = "portion1") double portion1,
-		@WebParam(name = "portion2") double portion2	
-	);
+			@WebParam(name = "subtract1") double subtract1,
+			@WebParam(name = "subtract2") double subtract2
+		);
 	
-	/**
-	 * Multiply method
-	 * 
-	 * @param factor1
-	 * @param factor2
-	 * @return
-	 */
-	@WebMethod(action=HOST + "/multiply", operationName="multiply")
-	public double multiply(
-		@WebParam(name = "factor1") double factor1,
-		@WebParam(name = "factor2") double factor2	
-	);
+	@WebMethod(action=HOST + "/multplica", operationName="mult")
+	public double mult(
+			@WebParam(name = "mult1") double mult1,
+			@WebParam(name = "mult2") double mult2
+		);
+
 }
